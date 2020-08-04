@@ -14,7 +14,6 @@ public class LamodaShoeSearch {
     String url = "https://www.lamoda.ru/";
     String gender = "Мужчинам";
     String typeOfClothes = "Обувь";
-    List<SelenideElement> searchResult = new ArrayList<>();
 
     //Добавить в корзину первый товар в разделе обувь в 40 размере
     @Test
@@ -28,8 +27,9 @@ public class LamodaShoeSearch {
         $(byLinkText(typeOfClothes)).click();
         $(byLinkText(typeOfClothes)).click();
         //Выбрать i товар в списке
-        searchResult = $$(byXpath(".//div[@class='products-list-item dyother dyMonitor']"));
-        searchResult.get(0).click();
+        $$(byXpath(".//div[@class='products-list-item dyother dyMonitor']"))
+                .get(0)
+                .click();
         //Выбрать размер
         $(byXpath(".//div[@class='_1NAuxdqJ984v_YCs8Mzpml']")).click();
         $(byXpath(".//div[contains(text(),'40 RUS')]")).click();
