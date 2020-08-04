@@ -2,12 +2,11 @@ package tests.homework_1;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selectors.byLinkText;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class YandexMarketSearch {

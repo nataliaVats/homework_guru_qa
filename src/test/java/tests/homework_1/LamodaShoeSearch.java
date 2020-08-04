@@ -2,8 +2,6 @@ package tests.homework_1;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 
