@@ -14,7 +14,6 @@ public class BNHSearch {
     String url = "https://www.bhphotovideo.com/";
     String item = "Sony Alpha a7S III";
     List<SelenideElement> searchResult = new ArrayList<>();
-
     //Добавить в корзину первый товар в разделе обувь в 40 размере
     @Test
     void searchBookTests() {
