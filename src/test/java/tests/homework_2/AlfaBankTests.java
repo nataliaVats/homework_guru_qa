@@ -31,7 +31,7 @@ public class AlfaBankTests {
     }
 
     @Test
-    void callDepositInsuranceV2(){
+    void callDepositInsuranceV2() {
         open(depositPage);
         $(byXpath(".//ul[@class='navigation']/li[7]"))
                 .preceding(0)
