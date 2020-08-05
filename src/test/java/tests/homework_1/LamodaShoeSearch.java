@@ -1,9 +1,6 @@
 package tests.homework_1;
 
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.byLinkText;
