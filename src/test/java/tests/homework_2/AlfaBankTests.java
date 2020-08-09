@@ -4,6 +4,7 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -17,7 +18,7 @@ public class AlfaBankTests {
         $(by("title","Депозиты")).shouldHave(text("Депозиты")).click();
         $("#product_page_list").shouldHave(text("Архивные депозиты"));
         $(byText("Архивные депозиты")).click();
-        $$(".product-cell__cell-back").shouldBe(CollectionCondition.size(3));
+        $$(".product-cell__cell-back").shouldHave(size(3));
     }
 
     @Test
