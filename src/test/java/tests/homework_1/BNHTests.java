@@ -1,11 +1,7 @@
 package tests.homework_1;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.by;
@@ -15,13 +11,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BNHTests {
     String item = "Sony Alpha a7S III";
-    String userName = "Mike";
-    String userSurname = "Mike";
-    String userValidEmail = "gladmonk@mail.ru";
-    String userValidPassword = "1qaz2wsx3edc";
+    String userName = "Anatoliy";//""Mike";
+    String userSurname ="Petrov";// "Mike";
+    String userValidEmail = "testtestets@mail.ru";//"mailmail@mail.ru";
+    String userValidPassword = "1q2w3e4r5t_";//"123456qaz";
     String userInValidEmail = "bozoc@royatillmail.top";
     String userInValidPassword = "qa$zwsx_122121";
-
 
 
     @Test
@@ -51,8 +46,6 @@ public class BNHTests {
 
     @Test
     void registerUserLoginTest() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
 
         open("https://www.bhphotovideo.com/");
 
