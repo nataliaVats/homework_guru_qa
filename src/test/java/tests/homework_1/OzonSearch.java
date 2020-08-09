@@ -9,27 +9,20 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
-public class OzonSearch {
-    String url = "https://www.ozon.ru/";
-    String bookForSearch = "Harry Potter and the Philosopher's Stone";
-    String searchBar = "search";
 
+public class OzonSearch {
     @Test
     void searchBookTests() {
-        // Открыть ozon
-        open(url);
-        // Ввести  в поиск Книга о гарри
-        $(byName(searchBar)).setValue(bookForSearch).pressEnter();
+        String bookForSearch = "Harry Potter and the Philosopher's Stone";
 
-        // Проверить, что книга есть в результате поиска
-        $(byPartialLinkText(bookForSearch)).shouldHave(text(bookForSearch));
-        // Найти книгу если она есть перейти в нее
-        $(byPartialLinkText(bookForSearch)).exists();
-        $(byPartialLinkText(bookForSearch)).click();
+        open("https://www.ozon.ru/");
+
+        $(byName("search")).setValue(bookForSearch).pressEnter();
+
+        $(byTitle("Товары не в наличии").shouldNot(exist);
+        $(".widget-search-result-container", 1).$(byText(bookForSearch)).click();
+          
         //проверить что редиректит на литрес
-        url().matches("[litres]");
-
+        assertTrue(url().matches("[litres]")); 
     }
-
-
 }
