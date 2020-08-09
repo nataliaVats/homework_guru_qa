@@ -71,12 +71,22 @@ public class BNHTests {
 
     @Test
     void signOutTest() {
-        signInRegisterUserTest();
+        open("https://www.bhphotovideo.com/");
+
+        $(by("data-selenium", "userLogin")).click();
+        $(".create-account").click();
+        $(by("data-selenium", "first")).setValue(userName);
+        $(by("data-selenium", "last")).setValue(userSurname);
+        $("#create-email").sendKeys(userValidEmail);
+        $("#create-password").setValue(userValidPassword);
+        $(by("value", "Create Account")).click();
+
+        $("#js-loginname").shouldHave(text(userName));
 
         $(by("data-selenium", "userLogin")).click();
         $("#signOut").click();
 
-        $(".twelve login-msg").shouldHave(text("Log In"));
+        $(".twelve.login-msg").shouldHave(text("Log In"));
     }
 
 }
