@@ -57,7 +57,7 @@ public class BNHTests {
     }
 
     @Test
-    void unregisterUserLoginTest() {
+    void signInUnregisterUserLoginTest() {
         open("https://www.bhphotovideo.com/");
 
         $(by("data-selenium", "userLogin")).click();
