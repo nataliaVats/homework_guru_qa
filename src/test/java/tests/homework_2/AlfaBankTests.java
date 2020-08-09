@@ -5,8 +5,7 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AlfaBankTests {
@@ -15,10 +14,10 @@ public class AlfaBankTests {
     @Test
     void countArchiveDepositsOnPage() {
         open(depositPage);
-        $(byXpath(".//a[@title='Депозиты']")).shouldHave(text("Депозиты")).click();
-        $(byXpath(".//body[@id='product_page_list']")).shouldHave(text("Архивные депозиты"));
-        $(byText("Архивные депозиты")).shouldBe(Condition.visible).click();
-        $$(byXpath(".//a[@class='product-cell__cell-back']")).shouldBe(CollectionCondition.size(3));
+        $(by("title","Депозиты")).shouldHave(text("Депозиты")).click();
+        $("#product_page_list").shouldHave(text("Архивные депозиты"));
+        $(byText("Архивные депозиты")).click();
+        $$(".product-cell__cell-back").shouldBe(CollectionCondition.size(3));
     }
 
     @Test
