@@ -1,7 +1,5 @@
 package tests.homework_2;
 
-import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.size;
@@ -11,12 +9,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class AlfaBankTests {
+
     String depositPage = "https://alfabank.ru/make-money/savings-account/";
 
     @Test
     void countArchiveDepositsOnPage() {
         open(depositPage);
-        $(by("title","Депозиты")).shouldHave(text("Депозиты")).click();
+        $(by("title", "Депозиты")).shouldHave(text("Депозиты")).click();
         $("#product_page_list").shouldHave(text("Архивные депозиты"));
         $(byText("Архивные депозиты")).click();
         $$(".product-cell__cell-back").shouldHave(size(3));
