@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
+
 public class AlfaBankTests {
     String depositPage = "https://alfabank.ru/make-money/savings-account/";
 
