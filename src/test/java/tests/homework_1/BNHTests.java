@@ -45,7 +45,7 @@ public class BNHTests {
     }
 
     @Test
-    void registerUserLoginTest() {
+    void signInRegisterUserTest() {
 
         open("https://www.bhphotovideo.com/");
 
@@ -73,8 +73,7 @@ public class BNHTests {
 
     @Test
     void signOutTest() {
-        registerUserLoginTest();
-
+        signInRegisterUserTest();
         $(by("data-selenium", "userLogin")).click();
         $("#signOut").click();
 
