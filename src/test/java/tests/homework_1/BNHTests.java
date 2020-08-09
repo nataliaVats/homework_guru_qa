@@ -1,7 +1,6 @@
 package tests.homework_1;
 
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.by;
@@ -12,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class BNHTests {
     String item = "Sony Alpha a7S III";
     String userName = "Anatoliy";//""Mike";
-    String userSurname ="Petrov";// "Mike";
+    String userSurname = "Petrov";// "Mike";
     String userValidEmail = "testtestets@mail.ru";//"mailmail@mail.ru";
     String userValidPassword = "1q2w3e4r5t_";//"123456qaz";
     String userInValidEmail = "bozoc@royatillmail.top";
@@ -46,7 +45,6 @@ public class BNHTests {
 
     @Test
     void signInRegisterUserTest() {
-
         open("https://www.bhphotovideo.com/");
 
         $(by("data-selenium", "userLogin")).click();
@@ -74,6 +72,7 @@ public class BNHTests {
     @Test
     void signOutTest() {
         signInRegisterUserTest();
+
         $(by("data-selenium", "userLogin")).click();
         $("#signOut").click();
 
