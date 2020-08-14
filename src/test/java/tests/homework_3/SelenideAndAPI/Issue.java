@@ -9,24 +9,21 @@ public class Issue implements Serializable {
     private String author = "MikeTikhonov";
     private String title = "First Issue";
     private String body = "QA guru";
-    private String repesitoryName = "MyTestRepository";
+    private String repositoryName = "MyTestRepository";
     private String labels = "bug";
+    private int number;
 
-
-    public void setNumber(long number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
-    private long number;
-
-    public long getNumber() {
+    public int getNumber() {
         return number;
     }
 
     public String getLabels() {
         return labels;
     }
-
 
     public String getTitle() {
         return title;
@@ -36,8 +33,8 @@ public class Issue implements Serializable {
         return body;
     }
 
-    public String getRepesitoryName() {
-        return repesitoryName;
+    public String getRepositoryName() {
+        return repositoryName;
     }
 
     public String getAuthor() {

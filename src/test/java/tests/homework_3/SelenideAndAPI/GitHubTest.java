@@ -14,17 +14,17 @@ public class GitHubTest {
 
     @Test
     @DisplayName("Test repository exists")
-    void createIssueTest(){
+    void createIssueTest() {
         open("https://github.com/");
 
         $(".HeaderMenu-link.no-underline.mr-3").click();
         $("#login_field").setValue("MikeTikhonov");
         $("#password").setValue("Xyvje9-wyjham-coqqef");
-        $(by("value","Sign in")).click();
-        $(by("aria-label","View profile and more")).click();
+        $(by("value", "Sign in")).click();
+        $(by("aria-label", "View profile and more")).click();
         $(byText("Your repositories")).click();
-        $(byText(issue.getRepesitoryName())).click();
-        $(by("data-content","Issues")).click();
+        $(byText(issue.getRepositoryName())).click();
+        $(by("data-content", "Issues")).click();
         $(".d-none.d-md-block").click();
 
         $(byText("Assignees")).click();
@@ -49,12 +49,12 @@ public class GitHubTest {
 
 
         $(byText("Submit new issue")).click();
-        issue.setNumber(Long.parseLong($(".f1-light.text-gray-light")
+        issue.setNumber(Integer.parseInt($(".f1-light.text-gray-light")
                 .getText()
-                .replaceAll("#","")));
+                .replaceAll("#", "")));
         System.out.println(issue.getNumber());
         apiTest.authorizeAndCheckIssue(issue);
     }
 
-    
+
 }
