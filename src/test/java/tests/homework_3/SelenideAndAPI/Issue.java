@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Issue implements Serializable {
+    private String ownerRepository = "MikeTikhonov";
     private String author = "MikeTikhonov";
     private String title = "First Issue";
     private String body = "QA guru";
@@ -39,5 +40,9 @@ public class Issue implements Serializable {
 
     public String getAuthor() {
         return author;
+    }
+
+    public String getOwnerRepository() {
+        return ownerRepository;
     }
 }

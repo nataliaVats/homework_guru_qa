@@ -3,14 +3,13 @@ package tests.homework_3.SelenideAndAPI;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 
 public class ApiTest {
 
-    public void authorizeAndCheckIssue(Issue issue) {
-
-        System.out.println(issue.getNumber());
+    public void authorizeAndCheckIssue(Issue issue, PrivateData privateData) {
         given()
-                .header("Authorization", "token e3043b9cc2b1649cd2e8f2ce87c384c362d53eb9")
+                .header("Authorization", "token " + privateData.getToken())
                 .baseUri("https://api.github.com")
                 .when()
                 .get("/repos/" + issue.getAuthor() + "/" + issue.getRepositoryName() +
@@ -22,6 +21,6 @@ public class ApiTest {
                 .body("title", equalTo(issue.getTitle()))
                 .body("number", equalTo(issue.getNumber()))
                 .body("assignee.login", equalTo(issue.getAuthor()))
-                .body("labels.name", equalTo(issue.getLabels()));
+                .body("labels.name.flatten()", hasItems(issue.getLabels()));
     }
 }
