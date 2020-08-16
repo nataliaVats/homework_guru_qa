@@ -16,23 +16,29 @@ allure {
         version = '2.13.5' // Latest Allure Version
     }
 }
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile 'com.codeborne:selenide:5.13.0'
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+
+    compile 'io.qameta.allure:allure-java-commons:2.13.5'
+    compile 'io.qameta.allure:allure-selenide:2.13.5'
+
+    compile 'com.codeborne:selenide:5.13.0'
+    compile 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    compile 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
 
     compile 'io.rest-assured:rest-assured:4.3.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.11.2'
-
 
     testCompile 'com.squareup.retrofit2:retrofit:2.9.0'
     testCompile 'com.squareup.retrofit2:converter-gson:2.9.0'
 
 }
+
+
 
 test {
     useJUnitPlatform()

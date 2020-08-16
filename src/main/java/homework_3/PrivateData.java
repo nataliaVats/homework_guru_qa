@@ -1,4 +1,4 @@
-package tests.homework_3.SelenideAndAPI;
+package homework_3;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -6,18 +6,18 @@ import java.util.Properties;
 
 public class PrivateData {
 
-    public String getPassword() {
+    public static String getPassword() {
         return getPrivateProperty("passwordRepository");
     }
 
-    public String getToken() {
+    public static String getToken() {
         return getPrivateProperty("authToken");
     }
 
-    private String getPrivateProperty(String key) {
+    private static String getPrivateProperty(String key) {
         FileInputStream fis = null;
         Properties property = new Properties();
-        String data ="";
+        String data = "";
         try {
             fis = new FileInputStream("src/test/resources/config.properties");
             property.load(fis);
