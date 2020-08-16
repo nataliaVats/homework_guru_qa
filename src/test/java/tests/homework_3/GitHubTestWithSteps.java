@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 @Owner("Tikhonov Mikhail")
 @Feature("Проверка возможности создать Задачу и проверить ее")
 
-public class GitHubTestsWithSteps {
+public class GitHubTestWithSteps {
 
     private BaseSteps baseSteps = new BaseSteps();
 
