@@ -18,7 +18,7 @@ public class BaseSteps {
     private final String LABELS = "bug";
 
 
-    @Step("Открыть страницу Github")
+    @Step("Открыть страницу Github " + BASE_URL)
     public void openMainPage() {
         Selenide.open(BASE_URL);
     }

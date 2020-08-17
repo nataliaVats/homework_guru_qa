@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static homework_3.ApiCheckIssueStep.authorizeAndCheckIssue;
 import static homework_3.PrivateData.getPassword;
 import static homework_3.WorkingIssue.*;
+import static io.qameta.allure.Allure.parameter;
 
 @Owner("Tikhonov Mikhail")
 @Feature("Проверка возможности создать Задачу и проверить ее")
@@ -30,6 +31,12 @@ public class GithubTestSelenideAndListener {
     @Test
     @DisplayName("Проверка создания задачи через Web и проверка полей созданной задачи через Api")
     void plainSelenideAndRestAssuredTest() {
+        parameter("Имя репозитория ", getRepositoryName());
+        parameter("Имя создаваемой задачи ", getTitle());
+        parameter("Текст создаваемой задачи ", getBody());
+        parameter("Задача назначается на ", getAuthor());
+        parameter("Тэг для задачи ", getLabels());
+
         open(getBaseUrl());
 
         $(".HeaderMenu-link.no-underline.mr-3").click();

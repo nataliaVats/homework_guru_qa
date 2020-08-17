@@ -22,7 +22,11 @@ public class GithubTestLambdaSteps {
     @Test
     @DisplayName("Проверка создания задачи через Web и проверка полей созданной задачи через Api")
     public void lambdaStepTest() {
-        parameter("Owner name", getOwnerRepository());
+        parameter("Имя репозитория ", getRepositoryName());
+        parameter("Имя создаваемой задачи ", getTitle());
+        parameter("Текст создаваемой задачи ", getBody());
+        parameter("Задача назначается на ", getAuthor());
+        parameter("Тэг для задачи ", getLabels());
 
         step("Открыть страницу Github", () -> {
             open(getBaseUrl());
