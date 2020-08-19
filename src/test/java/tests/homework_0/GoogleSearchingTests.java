@@ -12,13 +12,13 @@ public class GoogleSearchingTests {
 
     @Test
     public void ruSelenideOrgSearchTest() {
-        // Открыть google.com
+        // Open google.com
         open("https://google.com");
 
-        // Ввести в поиск Selenide
+        // Type "Selenide" in the Search field
         $(byName("q")).setValue("Selenide").pressEnter();
 
-        // Проверить наличие ru.selenide.org в результатах поиска
+        // Make sure "ru.selenide.org" appears in search result
         $(".g").shouldHave(text("ru.selenide.org"));
     }
 
