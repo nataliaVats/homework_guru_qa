@@ -6,8 +6,6 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
 allure {
     autoconfigure = true
     version = '2.13.5'  // Latest Allure Version
